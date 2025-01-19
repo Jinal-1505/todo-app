@@ -1,0 +1,25 @@
+{
+    "name": "todo-app-express",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "prepare": "husky install",
+        "start": "node dist/src/index.js",
+        "serve": "npm run build && npm start",
+        "start:dev": "nodemon src/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "JINAL MISTRY",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "husky": "^9.1.7",
+        "mongoose": "^8.9.5",
+        "nodemon": "^3.1.9"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2"
+    }
+}
