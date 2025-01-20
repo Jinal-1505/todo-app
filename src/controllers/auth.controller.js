@@ -2,6 +2,12 @@ import User from '../models/user.model.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
+/**
+ * SignUp
+ * @param {*} req
+ * @param {*} res
+ * @returns
+ */
 export const signUp = async (req, res) => {
     try {
         const { firstName, lastName, email, password } = req.body;
@@ -24,6 +30,12 @@ export const signUp = async (req, res) => {
     }
 };
 
+/**
+ * SignIn
+ * @param {*} req
+ * @param {*} res
+ * @returns
+ */
 export const signIn = async (req, res) => {
     try {
         const { email, password } = req.body;
