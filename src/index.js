@@ -8,6 +8,7 @@ const app = express();
 const mongo_url = process.env.MONGO_URL;
 const port = process.env.PORT || 3000;
 
+app.use(express.json());
 app.use('/api', indexRouter);
 
 mongoose
