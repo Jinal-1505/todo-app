@@ -2,6 +2,7 @@ import express from 'express';
 import indexRouter from './routes/index.route.js';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import seedAdminUser from './services/seed.service.js';
 
 dotenv.config();
 const app = express();
@@ -13,7 +14,10 @@ app.use('/api', indexRouter);
 
 mongoose
     .connect(mongo_url)
-    .then(() => console.log('Database Connected Successfully'))
+    .then(async () => {
+        console.log('Database Connected Successfully');
+        await seedAdminUser();
+    })
     .catch((error) => console.log('Database Connection failed', error));
 
 app.listen(port, () => console.log(`App is running on port ${port}`));
